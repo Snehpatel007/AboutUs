@@ -1,0 +1,122 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.animation-trigger {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
+    /* background: #24C6DC; */
+    /* background: linear-gradient(to left, #24C6DC, #514A9D); */
+}
+
+.more-text {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 2px solid black;
+    border-radius: 50px;
+    color: black;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.25s ease-out;
+}
+
+.more-text:hover {
+    background-color: white;
+    color: black;
+}
+
+.animation-trigger:hover .more-text {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.more-dots {
+    transform: translateY(-15px);
+    transition: all 0.3s ease;
+}
+
+.animation-trigger:hover .more-dots {
+    transform: translateY(-5px);
+    transition: all 0.3s ease-out;
+}
+
+.more-dots .dot {
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    margin: 0 3px;
+    background: white;
+}
+
+.animation-trigger:hover .more-dots .dot {
+    animation: bounce-3 0.8s 1 ease;
+    animation-fill-mode: forwards;
+}
+
+.animation-trigger:hover .more-dots .dot.dot-2 {
+    animation-delay: 0.1s;
+}
+
+.animation-trigger:hover .more-dots .dot.dot-3 {
+    animation-delay: 0.2s;
+}
+
+@keyframes bounce-1 {
+
+    0%,
+    25% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(0, 30px) scale(0.2);
+        background: black;
+    }
+
+    75%,
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes bounce-2 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(0, 30px) scale(0.2);
+        background: black;
+    }
+}
+
+@keyframes bounce-3 {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+        background: black;
+    }
+
+    70% {
+        transform: translate(0, 13px);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
