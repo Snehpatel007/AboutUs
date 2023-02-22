@@ -1,0 +1,9 @@
+.sparsh2k23{
+    height: fit-content;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 12px;
+    flex-wrap: wrap;
+}
